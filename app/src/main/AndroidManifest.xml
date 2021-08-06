@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BlockTraceUI">
         <activity android:name=".Contacts"></activity>
+        <activity android:name=".homeActivity"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
