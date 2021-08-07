@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">BlockTraceUI</string>
+
+    <string-array name="genders">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Trans</item>
+        <item>Non-Binary</item>
+        <item>Gender Non-Conforming</item>
+        <item>Other</item>
+    </string-array>
 </resources>
