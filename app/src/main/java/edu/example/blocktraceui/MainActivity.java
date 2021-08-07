@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +19,7 @@ import edu.example.blockTraceData.ResponseStatus;
 import edu.example.blockTraceData.UserProfile;
 
 public class MainActivity extends AppCompatActivity {
+    private static int SPLASH_TIME_OUT = 4000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -27,13 +29,15 @@ public class MainActivity extends AppCompatActivity {
         // so since this is the first acticity we can just call it here and never have to do it again for the app life cycle.
         RequestController.Initialize(this);
 
-        setContentView(R.layout.home_screen);
-        Button contactIcon = (Button) findViewById(R.id.btn_contacts);
-        contactIcon.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View view) {
-                switchToContactsActivity();
+        setContentView(R.layout.launch_screen);
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Intent homeIntent = new Intent(MainActivity.this, homeActivity.class);
+                startActivity(homeIntent);
+                finish();
             }
-        });
+        }, SPLASH_TIME_OUT);
 
         // these are not where the methods should go but im putting them here as example usage of the simple API
         // so we might wanna create an account. Normally we would get all his datra fromt extviews but ill do it manually
@@ -87,8 +91,5 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    private void switchToContactsActivity() {
-        Intent switchActivityIntent = new Intent(this, Contacts.class);
-        startActivity(switchActivityIntent);
-    }
+
 }
