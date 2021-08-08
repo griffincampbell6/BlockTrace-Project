@@ -28,6 +28,13 @@ public class homeActivity extends AppCompatActivity {
             }
         });
 
+        Button createContract = (Button) findViewById(R.id.btn_createContract);
+        editIcon.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                switchToCreateActivity();
+            }
+        });
+
     }
 
     private void switchToContactsActivity() {
@@ -36,6 +43,11 @@ public class homeActivity extends AppCompatActivity {
     }
 
     private void switchToEditActivity() {
+        Intent switchActivityIntent = new Intent(this, EditProfile.class);
+        startActivity(switchActivityIntent);
+    }
+
+    private void switchToCreateActivity() {
         Intent switchActivityIntent = new Intent(this, EditProfile.class);
         startActivity(switchActivityIntent);
     }
