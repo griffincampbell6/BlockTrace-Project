@@ -23,10 +23,10 @@ public class ContactListItemAdapter extends ArrayAdapter<ContactListItem> {
 
     }
 
-    public View getView(int position, View convesrtView, ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
 
         ContactListItem item = (ContactListItem) getItem(position);
-        View view = mInflater.inflate(R.layout.activity_contacts, null);
+        View view = mInflater.inflate(R.layout.contact_list_item, null);
 
         // set name
         TextView name;
@@ -61,7 +61,7 @@ public class ContactListItemAdapter extends ArrayAdapter<ContactListItem> {
         // set lastUpdated
         TextView lastUpdated;
         lastUpdated = (TextView) view.findViewById(R.id.contact_lastUpdated);
-        lastUpdated.setText(item.lastUpdated;
+        lastUpdated.setText(item.lastUpdated);
 
         return view;
 
