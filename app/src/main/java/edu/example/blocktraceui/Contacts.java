@@ -11,21 +11,53 @@ import java.util.List;
 
 public class Contacts extends AppCompatActivity {
 
+    private List<ContactListItem> contactList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacts);
 
-        fillContactList();
+        contactList = new ArrayList<ContactListItem>();
+
+        // item adapter
+        ContactListItemAdapter adapter;
+        adapter = new ContactListItemAdapter(this, 0, contactList);
+
+        ListView listView = (ListView) findViewById(R.id.contactsListView);
+        listView.setAdapter(adapter);
+
     }
 
+    public void addListItem(String name,
+                            String location,
+                            String phone,
+                            String email,
+                            String pathogen,
+                            String testResult,
+                            String lastUpdated) {
+
+        ContactListItem contact = new ContactListItem();
+        contact.name = name;
+        contact.email = email;
+        contact.phone = phone;
+        contact.location = location;
+        contact.pathogen = pathogen;
+        contact.testResult = testResult;
+        contact.lastUpdated = lastUpdated;
+
+        contactList.add(contact);
+    }
+
+
+    // for testing
     public void fillContactList() {
 
         List<ContactListItem> list = new ArrayList<ContactListItem>();
 
         ContactListItem contact1 = new ContactListItem();
-        contact1.name = "NULL";
-        contact1.email = "NULL";
+        contact1.name = "John Doe";
+        contact1.email = "NULLs";
         contact1.phone = "NULL";
         contact1.location = "NULL";
         contact1.pathogen = "NULL";
