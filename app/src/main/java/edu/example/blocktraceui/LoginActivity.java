@@ -50,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
         EditText input_userName = (EditText) findViewById(R.id.editTextUsername);
         EditText input_userPassword = (EditText) findViewById(R.id.editTextPassword);
         String[] loginData = new String[2];
-        loginData[0]= input_userName.getText().toString();
+        loginData[0]= input_userName.getText().toString().toLowerCase();
         loginData[1]= input_userPassword.getText().toString();
         // api call;
         try {
