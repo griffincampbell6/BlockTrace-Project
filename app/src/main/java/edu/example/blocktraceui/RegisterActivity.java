@@ -57,19 +57,18 @@ public class RegisterActivity extends AppCompatActivity {
         EditText input_UserName = (EditText) findViewById(R.id.editTextUsernameReg);
         EditText input_UserPassword = (EditText) findViewById(R.id.editTextPasswordReg);
         Spinner input_UserGender = (Spinner) findViewById(R.id.spn_genderReg);
-        EditText input_UserPhone = (EditText) findViewById(R.id.editTextPhone);
+        EditText input_UserPhone = (EditText) findViewById(R.id.editTextPhoneReg);
         EditText input_UserAge = (EditText) findViewById(R.id.editTextAgeReg);
 
         //Populate newPerson object to register with API
         Person newPerson = new Person();
-        newPerson.firstName = input_UserFirstName.toString();
-        newPerson.lastName = input_UserLastName.toString();
-        // user name should be the same as name or firstname
-        newPerson.userName= input_UserName.toString();
-        newPerson.password = input_UserPassword.toString();
-        newPerson.gender = input_UserGender.toString();
-        newPerson.phone = input_UserPhone.toString();
-        newPerson.age = Integer.parseInt(input_UserAge.toString());
+        newPerson.firstName = input_UserFirstName.getText().toString();
+        newPerson.lastName = input_UserLastName.getText().toString();
+        newPerson.userName= input_UserName.getText().toString();
+        newPerson.password = input_UserPassword.getText().toString();
+        newPerson.gender = input_UserGender.getSelectedItem().toString();
+        newPerson.phone = input_UserPhone.getText().toString();
+        newPerson.age = Integer.parseInt(input_UserAge.getText().toString());
         try {
             RequestController.CreateNewAccount(newPerson,this::AccountCreationResponse);
         }
