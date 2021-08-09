@@ -38,7 +38,9 @@ public class ContactListItemAdapter extends ArrayAdapter<Person> {
         // set location
         TextView location;
         location = (TextView) view.findViewById(R.id.contact_location);
-        location.setText(null);
+        if(item.location!=null&&!item.location.equals(""))
+            location.setText(item.location);
+        else location.setText("");
 
         // set phone
         TextView phone;
@@ -63,7 +65,9 @@ public class ContactListItemAdapter extends ArrayAdapter<Person> {
         // set lastUpdated
         TextView lastUpdated;
         lastUpdated = (TextView) view.findViewById(R.id.contact_lastUpdated);
-        lastUpdated.setText(null);
+        if(item.dateReported!=null&&!item.dateReported.equals(""))
+            lastUpdated.setText(item.dateReported);
+        else lastUpdated.setText("NO DATE RECORDED");
 
         Button deleteButton = (Button) view.findViewById(R.id.delete_contact);
         deleteButton.setOnClickListener(v-> OnDeletePressed(item.id));
