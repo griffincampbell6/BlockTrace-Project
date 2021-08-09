@@ -12,6 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.BlockTraceUI">
+        <activity android:name=".RegisterActivity"></activity>
+        <activity android:name=".LoginActivity" />
         <activity
             android:name=".EditProfile"
             android:exported="true" />

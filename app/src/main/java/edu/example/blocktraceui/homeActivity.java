@@ -104,12 +104,16 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     public boolean onMenuItemClick(MenuItem item) {
         switch(item.getItemId()){
             case R.id.logout:
-                setContentView(R.layout.activity_main);
+                switchToLoginActivity();
                 return true;
         }
         return false;
     }
 
+    private void switchToLoginActivity() {
+        Intent switchActivityIntent = new Intent(this, LoginActivity.class);
+        startActivity(switchActivityIntent);
+    }
 
     private void switchToContactsActivity() {
         Intent switchActivityIntent = new Intent(this, Contacts.class);
