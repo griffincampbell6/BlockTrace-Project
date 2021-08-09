@@ -1,6 +1,233 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#407EB8"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:id="@+id/lbl_ageReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Age:"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextAgeReg"
+            app:layout_constraintEnd_toEndOf="@+id/labelfName"
+            app:layout_constraintTop_toTopOf="@+id/editTextAgeReg" />
+
+        <TextView
+            android:id="@+id/lbl_genderReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Gender:"
+            android:textColor="#F6F6F6"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/spn_genderReg"
+            app:layout_constraintEnd_toEndOf="@+id/labelfName"
+            app:layout_constraintTop_toTopOf="@+id/spn_genderReg" />
+
+        <TextView
+            android:id="@+id/lbl_phone2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Phone:"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextPhoneReg"
+            app:layout_constraintEnd_toEndOf="@+id/labelfName"
+            app:layout_constraintTop_toTopOf="@+id/editTextPhoneReg" />
+
+        <EditText
+            android:id="@+id/editTextPhoneReg"
+            android:layout_width="210dp"
+            android:layout_height="36dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:hint="Enter number..."
+            android:inputType="phone"
+            app:layout_constraintBottom_toTopOf="@+id/editTextUsernameReg"
+            app:layout_constraintEnd_toEndOf="@+id/editTextfName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextEmailReg" />
+
+        <EditText
+            android:id="@+id/editTextEmailReg"
+            android:layout_width="210dp"
+            android:layout_height="36dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:hint="Enter email..."
+            android:inputType="textEmailAddress"
+            app:layout_constraintBottom_toTopOf="@+id/btn_register"
+            app:layout_constraintEnd_toEndOf="@+id/editTextfName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextfName" />
+
+        <TextView
+            android:id="@+id/lbl_emailReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Email:"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextEmailReg"
+            app:layout_constraintEnd_toEndOf="@+id/labelfName"
+            app:layout_constraintTop_toTopOf="@+id/editTextEmailReg" />
+
+        <EditText
+            android:id="@+id/editTextAgeReg"
+            android:layout_width="210dp"
+            android:layout_height="36dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:hint="Enter age..."
+            android:inputType="number"
+            app:layout_constraintBottom_toTopOf="@+id/editTextEmailReg"
+            app:layout_constraintEnd_toEndOf="@+id/editTextfName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextfName" />
+
+        <Spinner
+            android:id="@+id/spn_genderReg"
+            android:layout_width="210dp"
+            android:layout_height="36dp"
+            android:background="#FFFFFF"
+            android:textAlignment="textEnd"
+            app:layout_constraintBottom_toTopOf="@+id/editTextEmailReg"
+            app:layout_constraintEnd_toEndOf="@+id/editTextfName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextAgeReg" />
+
+        <TextView
+            android:id="@+id/labelPasswordReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password:"
+            android:textColor="#FFFCFC"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextPasswordReg"
+            app:layout_constraintEnd_toEndOf="@+id/labelfName" />
+
+        <TextView
+            android:id="@+id/labelUsernameReg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Username:"
+            android:textColor="#FFFCFC"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextUsernameReg"
+            app:layout_constraintEnd_toEndOf="@+id/labelfName"
+            app:layout_constraintTop_toTopOf="@+id/editTextUsernameReg" />
+
+        <TextView
+            android:id="@+id/labelfName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="First Name:"
+            android:textColor="#FFFCFC"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextfName"
+            app:layout_constraintEnd_toStartOf="@+id/editTextfName"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/editTextfName" />
+
+        <TextView
+            android:id="@+id/labellName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Name:"
+            android:textColor="#FFFCFC"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextlName"
+            app:layout_constraintEnd_toEndOf="@+id/labelfName"
+            app:layout_constraintTop_toTopOf="@+id/editTextlName" />
+
+        <EditText
+            android:id="@+id/editTextPasswordReg"
+            android:layout_width="210dp"
+            android:layout_height="36dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:hint="Enter password..."
+            android:inputType="textPassword"
+            app:layout_constraintBottom_toTopOf="@+id/btn_register"
+            app:layout_constraintEnd_toEndOf="@+id/editTextfName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextUsernameReg" />
+
+        <EditText
+            android:id="@+id/editTextUsernameReg"
+            android:layout_width="210dp"
+            android:layout_height="36dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:hint="Enter username..."
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/btn_register"
+            app:layout_constraintEnd_toEndOf="@+id/editTextfName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextEmailReg" />
+
+        <EditText
+            android:id="@+id/editTextfName"
+            android:layout_width="210dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="48dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:hint="Enter first name..."
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/btn_register"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_start"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/btn_register"
+            android:layout_width="130dp"
+            android:layout_height="40dp"
+            android:background="@drawable/button"
+            android:text="Register"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txt_start"
+            app:layout_constraintVertical_bias="0.944" />
+
+        <EditText
+            android:id="@+id/editTextlName"
+            android:layout_width="210dp"
+            android:layout_height="36dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:hint="Enter last name..."
+            android:inputType="textPersonName"
+            app:layout_constraintBottom_toTopOf="@+id/editTextAgeReg"
+            app:layout_constraintEnd_toEndOf="@+id/editTextfName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextfName" />
+
+        <TextView
+            android:id="@+id/txt_start"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="BlockTrace"
+            android:textColor="#FFFFFF"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.042" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
