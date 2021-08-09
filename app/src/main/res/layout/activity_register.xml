@@ -34,9 +34,9 @@
             android:ems="10"
             android:hint="Enter city, ST"
             android:inputType="textPostalAddress"
-            app:layout_constraintBottom_toTopOf="@+id/editTextPasswordReg"
+            app:layout_constraintBottom_toTopOf="@+id/editTextUsernameReg"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
-            app:layout_constraintTop_toBottomOf="@+id/editTextEmailReg" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextPhoneReg" />
 
         <TextView
             android:id="@+id/lbl_ageReg"
@@ -82,33 +82,9 @@
             android:ems="10"
             android:hint="Enter number..."
             android:inputType="phone"
-            app:layout_constraintBottom_toTopOf="@+id/editTextTextPostalAddress3"
+            app:layout_constraintBottom_toTopOf="@+id/btn_goBackToLogin"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
-            app:layout_constraintTop_toBottomOf="@+id/editTextEmailReg" />
-
-        <EditText
-            android:id="@+id/editTextEmailReg"
-            android:layout_width="210dp"
-            android:layout_height="36dp"
-            android:background="#FFFFFF"
-            android:ems="10"
-            android:hint="Enter email..."
-            android:inputType="textEmailAddress"
-            app:layout_constraintBottom_toTopOf="@+id/btn_register"
-            app:layout_constraintEnd_toEndOf="@+id/editTextfName"
-            app:layout_constraintTop_toBottomOf="@+id/txt_start" />
-
-        <TextView
-            android:id="@+id/lbl_emailReg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/roboto_medium"
-            android:text="Email:"
-            android:textColor="#FFFFFF"
-            android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/editTextEmailReg"
-            app:layout_constraintEnd_toEndOf="@+id/labelfName"
-            app:layout_constraintTop_toTopOf="@+id/editTextEmailReg" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextfName" />
 
         <EditText
             android:id="@+id/editTextAgeReg"
@@ -118,7 +94,7 @@
             android:ems="10"
             android:hint="Enter age..."
             android:inputType="number"
-            app:layout_constraintBottom_toTopOf="@+id/editTextEmailReg"
+            app:layout_constraintBottom_toTopOf="@+id/editTextPhoneReg"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
             app:layout_constraintTop_toBottomOf="@+id/editTextfName" />
 
@@ -128,7 +104,7 @@
             android:layout_height="36dp"
             android:background="#FFFFFF"
             android:textAlignment="textStart"
-            app:layout_constraintBottom_toTopOf="@+id/editTextEmailReg"
+            app:layout_constraintBottom_toTopOf="@+id/editTextPhoneReg"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
             app:layout_constraintTop_toBottomOf="@+id/editTextAgeReg" />
 
@@ -186,8 +162,7 @@
             android:inputType="textPassword"
             app:layout_constraintBottom_toTopOf="@+id/btn_register"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
-            app:layout_constraintTop_toBottomOf="@+id/editTextEmailReg"
-            app:layout_constraintVertical_bias="0.907" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextUsernameReg" />
 
         <EditText
             android:id="@+id/editTextUsernameReg"
@@ -197,9 +172,9 @@
             android:ems="10"
             android:hint="Enter username..."
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/editTextPasswordReg"
+            app:layout_constraintBottom_toTopOf="@+id/btn_goBackToLogin"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
-            app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress3" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextPhoneReg" />
 
         <EditText
             android:id="@+id/editTextfName"

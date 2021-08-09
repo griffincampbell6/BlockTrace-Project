@@ -117,10 +117,10 @@
                 android:text="Age:"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/lbl_email"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/card_separator_top"
                 app:layout_constraintTop_toBottomOf="@+id/card_separator_top"
-                app:layout_constraintVertical_bias="0.108" />
+                app:layout_constraintVertical_bias="0.111" />
 
             <TextView
                 android:id="@+id/lbl_gender"
@@ -142,9 +142,10 @@
                 android:text="Location:"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/lbl_email"
+                app:layout_constraintBottom_toTopOf="@+id/lbl_phone"
                 app:layout_constraintStart_toStartOf="@+id/card_separator_top"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_age" />
+                app:layout_constraintTop_toBottomOf="@+id/lbl_age"
+                app:layout_constraintVertical_bias="0.686" />
 
             <TextView
                 android:id="@+id/lbl_phone"
@@ -154,22 +155,10 @@
                 android:text="Phone:"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/lbl_email"
-                app:layout_constraintStart_toStartOf="@+id/card_separator_top"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_location" />
-
-            <TextView
-                android:id="@+id/lbl_email"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:text="Email:"
-                android:textColor="#000000"
-                android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/card_separator_top"
                 app:layout_constraintTop_toBottomOf="@+id/card_separator_top"
-                app:layout_constraintVertical_bias="0.92" />
+                app:layout_constraintVertical_bias="0.844" />
 
             <ImageView
                 android:id="@+id/imageView5"
@@ -202,16 +191,6 @@
                 app:layout_constraintBottom_toBottomOf="@+id/lbl_location"
                 app:layout_constraintEnd_toEndOf="@+id/card_separator_top"
                 app:layout_constraintTop_toTopOf="@+id/lbl_location" />
-
-            <EditText
-                android:id="@+id/editTextTextEmailAddress"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:inputType="textEmailAddress"
-                app:layout_constraintBottom_toBottomOf="@+id/lbl_email"
-                app:layout_constraintTop_toTopOf="@+id/lbl_email"
-                tools:layout_editor_absoluteX="134dp" />
 
             <EditText
                 android:id="@+id/editTextNumber"
