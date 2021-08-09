@@ -2,9 +2,14 @@ package edu.example.blocktraceui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +32,21 @@ public class Contacts extends AppCompatActivity {
         ListView listView = (ListView) findViewById(R.id.contactsListView);
         listView.setAdapter(adapter);
 
+        ImageButton backBtn = (ImageButton) findViewById(R.id.backBtn);
+        backBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                backBtn();
+            }
+        });
+
+        addListItem("John Doe", "Boston, MA", "617-939-7468", "johndoe@gmail.com", "COVID", "POSITIVE", "8/6/2021");
+        addListItem("John Doe", "Boston, MA", "617-939-7468", "johndoe@gmail.com", "COVID", "POSITIVE", "8/6/2021");
+
+    }
+
+    public void backBtn() {
+        setContentView(R.layout.home_screen);
     }
 
     public void addListItem(String name,
@@ -47,6 +67,7 @@ public class Contacts extends AppCompatActivity {
         contact.lastUpdated = lastUpdated;
 
         contactList.add(contact);
+
     }
 
 

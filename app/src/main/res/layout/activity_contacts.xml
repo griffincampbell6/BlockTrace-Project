@@ -7,20 +7,6 @@
     android:background="#407EB8"
     tools:context=".Contacts">
 
-    <Button
-        android:id="@+id/btn_settings2"
-        android:layout_width="49dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="28dp"
-        android:background="#00FFFFFF"
-        android:foreground="@drawable/setting_icon"
-        app:layout_constraintBottom_toTopOf="@+id/separator_top"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.857"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
-
     <ImageView
         android:id="@+id/separator_top2"
         android:layout_width="380dp"
@@ -39,14 +25,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Contacts"
-        android:textSize="28sp"
         android:textColor="#FFFFFF"
+        android:textSize="28sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.104"
+        app:layout_constraintHorizontal_bias="0.906"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.046" />
+        app:layout_constraintVertical_bias="0.041" />
 
     <ListView
         android:id="@+id/contactsListView"
@@ -57,5 +43,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separator_top2"
         app:layout_constraintVertical_bias="0.781" />
+
+    <ImageButton
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.148"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.042"
+        app:srcCompat="?attr/actionModeCloseDrawable" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
