@@ -36,17 +36,13 @@ public class Contacts extends AppCompatActivity {
         backBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                backBtn();
+                switchToHomeActivity();
             }
         });
 
         addListItem("John Doe", "Boston, MA", "617-939-7468", "johndoe@gmail.com", "COVID", "POSITIVE", "8/6/2021");
         addListItem("John Doe", "Boston, MA", "617-939-7468", "johndoe@gmail.com", "COVID", "POSITIVE", "8/6/2021");
 
-    }
-
-    public void backBtn() {
-        setContentView(R.layout.home_screen);
     }
 
     public void addListItem(String name,
@@ -112,6 +108,11 @@ public class Contacts extends AppCompatActivity {
 
         ListView listView = (ListView) findViewById(R.id.contactsListView);
         listView.setAdapter(adapter);
+    }
+
+    private void switchToHomeActivity() {
+        Intent switchActivityIntent = new Intent(this, homeActivity.class);
+        startActivity(switchActivityIntent);
     }
 
 }
