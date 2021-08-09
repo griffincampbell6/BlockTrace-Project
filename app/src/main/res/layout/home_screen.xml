@@ -285,10 +285,9 @@
                 android:background="@drawable/line_black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.466"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.818" />
+                app:layout_constraintVertical_bias="0.666" />
 
             <Button
                 android:id="@+id/btn_createContact"
@@ -296,7 +295,7 @@
                 android:layout_height="36dp"
                 android:background="@drawable/button"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Alert a Contact"
+                android:text="Add a Contact"
                 android:textColor="#FDFDFD"
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -304,7 +303,7 @@
                 app:layout_constraintHorizontal_bias="0.172"
                 app:layout_constraintStart_toStartOf="@+id/card_separator_top2"
                 app:layout_constraintTop_toBottomOf="@+id/card_separator_top2"
-                app:layout_constraintVertical_bias="0.484" />
+                app:layout_constraintVertical_bias="0.709" />
 
             <Button
                 android:id="@+id/btnReport"
@@ -315,10 +314,35 @@
                 android:text="Report Status"
                 android:textColor="#FDFDFD"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintBottom_toBottomOf="@+id/btn_createContact"
                 app:layout_constraintEnd_toEndOf="@+id/card_separator_top2"
                 app:layout_constraintStart_toEndOf="@+id/btn_createContact"
-                app:layout_constraintTop_toBottomOf="@+id/card_separator_top2" />
+                app:layout_constraintTop_toTopOf="@+id/btn_createContact" />
+
+            <TextView
+                android:id="@+id/txt_result"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="NULL"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toTopOf="@+id/btn_createContact"
+                app:layout_constraintEnd_toEndOf="@+id/btnReport"
+                app:layout_constraintHorizontal_bias="0.486"
+                app:layout_constraintStart_toStartOf="@+id/btn_createContact"
+                app:layout_constraintTop_toBottomOf="@+id/textView6"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Current Status:"
+                app:layout_constraintBottom_toTopOf="@+id/btnReport"
+                app:layout_constraintEnd_toEndOf="@+id/btnReport"
+                app:layout_constraintHorizontal_bias="0.485"
+                app:layout_constraintStart_toStartOf="@+id/btn_createContact"
+                app:layout_constraintTop_toBottomOf="@+id/card_separator_top2"
+                app:layout_constraintVertical_bias="0.181" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
