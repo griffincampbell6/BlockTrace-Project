@@ -59,6 +59,7 @@ public class RegisterActivity extends AppCompatActivity {
         Spinner input_UserGender = (Spinner) findViewById(R.id.spn_genderReg);
         EditText input_UserPhone = (EditText) findViewById(R.id.editTextPhoneReg);
         EditText input_UserAge = (EditText) findViewById(R.id.editTextAgeReg);
+        EditText input_UserLocation = (EditText) findViewById(R.id.editTextAddress);
 
         //Populate newPerson object to register with API
         Person newPerson = new Person();
@@ -69,6 +70,7 @@ public class RegisterActivity extends AppCompatActivity {
         newPerson.gender = input_UserGender.getSelectedItem().toString();
         newPerson.phone = input_UserPhone.getText().toString();
         newPerson.age = Integer.parseInt(input_UserAge.getText().toString());
+        newPerson.location = input_UserLocation.getText().toString();
         try {
             RequestController.CreateNewAccount(newPerson,this::AccountCreationResponse);
         }
