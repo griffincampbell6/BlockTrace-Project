@@ -13,6 +13,7 @@ public class Person
     public String userName ;
     public String password;
     public String dateReported;
+    public String location;
     public Person()
     {
 
