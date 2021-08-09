@@ -187,12 +187,14 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     public void PopulateFields()
     {
+        TextView user = (TextView) findViewById(R.id.txt_username);
         TextView name = (TextView) findViewById(R.id.txt_name);
         TextView age = (TextView) findViewById(R.id.txt_age);
         TextView gender = (TextView) findViewById(R.id.txt_gender);
         TextView location = (TextView) findViewById(R.id.txt_location);
         TextView phone = (TextView) findViewById(R.id.txt_phone);
 
+        user.setText(UserProfile.GetActivePofile().profileOwner.userName);
         name.setText(UserProfile.GetActivePofile().profileOwner.firstName + " " + UserProfile.GetActivePofile().profileOwner.lastName);
         age.setText(String.valueOf(UserProfile.GetActivePofile().profileOwner.age));
         gender.setText(UserProfile.GetActivePofile().profileOwner.gender);
