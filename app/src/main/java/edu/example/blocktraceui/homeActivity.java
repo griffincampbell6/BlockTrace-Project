@@ -196,7 +196,7 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         name.setText(UserProfile.GetActivePofile().profileOwner.firstName + " " + UserProfile.GetActivePofile().profileOwner.lastName);
         age.setText(String.valueOf(UserProfile.GetActivePofile().profileOwner.age));
         gender.setText(UserProfile.GetActivePofile().profileOwner.gender);
-        //location.setText(UserProfile.GetActivePofile().profileOwner.location);
+        location.setText(UserProfile.GetActivePofile().profileOwner.location);
         phone.setText(UserProfile.GetActivePofile().profileOwner.phone);
         //email.setText(UserProfile.GetActivePofile().profileOwner.email);
 
