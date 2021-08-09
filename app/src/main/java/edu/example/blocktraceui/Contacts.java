@@ -14,6 +14,8 @@ import android.widget.RelativeLayout;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.example.blockTraceData.UserProfile;
+
 public class Contacts extends AppCompatActivity {
 
     private List<ContactListItem> contactList;
@@ -22,7 +24,6 @@ public class Contacts extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contacts);
-
         contactList = new ArrayList<ContactListItem>();
 
         // item adapter

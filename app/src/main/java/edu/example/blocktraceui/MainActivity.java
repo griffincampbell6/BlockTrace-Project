@@ -39,57 +39,5 @@ public class MainActivity extends AppCompatActivity {
             }
         }, SPLASH_TIME_OUT);
 
-        // these are not where the methods should go but im putting them here as example usage of the simple API
-        // so we might wanna create an account. Normally we would get all his datra fromt extviews but ill do it manually
-        Person newPerson  =new Person("Michael","Berthaud",21,"M","11111111111","m@b.com","password");
-        // annoyingly enough java makes all API calls have to get wrapped in Try catch blocks
-        //itll auto generate it for you though.
-
-        try {
-            // feel free to swap this out for other start up methods like CreateAccount to get a feel
-            RequestController.Login(new String[] {"m@b.com","password"},this::OnLogin);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
     }
-    void OnAccountCreated(ResponseStatus status, Person newPerson)
-    {
-        // when yall run this method it will always be false because I've already ran it so the server will say "user already created with username blah blah blah"
-        if (status.isValid) {
-            Log.v("API", newPerson.firstName);
-        }
-        // server return error (which you can see in the console as well) if userName already exist
-        else Log.v("API", status.errorMessage);
-    }
-    void OnLogin(ResponseStatus status, Person newPerson) {
-        if (status.isValid)
-        {
-            UserProfile.SetActiveProfile(newPerson);
-            Log.v("API","Valid");
-            // ask server to get all Contacts
-            try {
-                RequestController.GetAllContacts(UserProfile.GetActiveLocalProfile().profileOwner.id,this::OnContactsRecieved);
-            }
-            catch (JSONException e)
-            {
-                e.printStackTrace();
-            }
-        }
-        else Log.v("API", status.errorMessage);
-    }
-    void OnContactsRecieved(ResponseStatus status, Person[] allContacts)
-    {
-        if(status.isValid)
-        {
-            // update the active prole
-            UserProfile.GetActiveLocalProfile().userContacts = allContacts;
-            // just log to console just to see;
-            for (int i =0; i<allContacts.length; ++i)
-            {
-             Log.v("API",allContacts[i].userName);
-            }
-        }
-    }
-
 }

@@ -202,6 +202,10 @@ public class RequestController
                 });
         requestQueue.add(jRequest);
     }
+    public static void GetAllContacts(Person person, BiConsumer<ResponseStatus,Person[]> callback) throws JSONException,UnsupportedOperationException
+    {
+        GetAllContacts(person.id,callback);
+    }
     // call this method if you want to update a person in the DB
     public static void UpdatePerson(Person p, Consumer<ResponseStatus> callback) throws UnsupportedOperationException, JSONException {
         String personAsJson= gson.toJson(p);

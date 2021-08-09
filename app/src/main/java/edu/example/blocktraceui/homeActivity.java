@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -15,15 +16,25 @@ import android.widget.PopupMenu;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import org.json.JSONException;
+
+import edu.example.blockTraceData.Person;
+import edu.example.blockTraceData.RequestController;
+import edu.example.blockTraceData.ResponseStatus;
+import edu.example.blockTraceData.UserProfile;
+
 public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener {
     private AlertDialog.Builder dialogBuilderCreate, dialogBuilderReport;
     private AlertDialog dialog;
     private EditText contactName;
     private Button btn_createCancel, btn_createSave;
-
+    boolean hasGottenResponse;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
+
         super.onCreate(savedInstanceState);
+        GetUserContacts();
         setContentView(R.layout.home_screen);
 
         Button settingIcon = (Button) findViewById(R.id.btn_settings);
@@ -53,6 +64,7 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 createContactDialog();
             }
         });
+
 
         Button btnReport = (Button) findViewById(R.id.btnReport);
         btnReport.setOnClickListener(new View.OnClickListener() {
@@ -151,4 +163,30 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         });
     }
 
+    public void PopulateFields()
+    {
+     //nametTextview.text=   UserProfile.GetActivePofile().profileOwner.firstName;
+    }
+    public void GetUserContacts()
+    {
+        Person currentPerson= UserProfile.GetActivePofile().profileOwner;
+        try {
+            RequestController.GetAllContacts(currentPerson,this::OnContactsRecieved);
+        }
+        catch (JSONException ex){}
+
+    }
+    void OnContactsRecieved(ResponseStatus status, Person[] allContacts)
+    {
+        hasGottenResponse=true;
+        if(status.isValid)
+        {
+            int len = allContacts.length;
+            for(int i=0; i<len; ++i)
+                Log.v("API",  allContacts[i].userName);
+            UserProfile.SetContactsList(allContacts);
+        }
+        else
+            Log.v("API",  status.errorMessage);
+    }
 }
