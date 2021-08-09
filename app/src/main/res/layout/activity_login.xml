@@ -46,7 +46,7 @@
             android:id="@+id/labelUsername"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="48dp"
+            android:layout_marginStart="32dp"
             android:shadowColor="#000000"
             android:text="Username:"
             android:textColor="#FFFCFC"
@@ -63,9 +63,8 @@
             android:textColor="#FFFCFC"
             android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="@+id/editTextPassword"
-            app:layout_constraintStart_toStartOf="@+id/labelUsername"
-            app:layout_constraintTop_toTopOf="@+id/editTextPassword"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintEnd_toEndOf="@+id/labelUsername"
+            app:layout_constraintTop_toTopOf="@+id/editTextPassword" />
 
         <EditText
             android:id="@+id/editTextUsername"
@@ -80,10 +79,10 @@
             android:shadowColor="#000000"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintHorizontal_bias="0.228"
             app:layout_constraintStart_toEndOf="@+id/labelUsername"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.319" />
+            app:layout_constraintVertical_bias="0.317" />
 
         <EditText
             android:id="@+id/editTextPassword"
