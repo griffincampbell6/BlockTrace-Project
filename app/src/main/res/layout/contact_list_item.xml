@@ -1,19 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="350sp"
-    android:layout_height="125sp"
-    android:background="@color/white"
-    android:orientation="vertical"
-    android:layout_marginBottom="10dp">
+    android:layout_height="160sp"
+    android:background="@drawable/button"
+    android:backgroundTint="#FFFFFF"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/contact_name"
-        android:textColor="@color/black"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:layout_marginLeft="4dp"/>
+    <LinearLayout
+        android:layout_width="340dp"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/contact_name"
+            android:layout_width="240dp"
+            android:layout_height="40dp"
+            android:paddingLeft="10dp"
+            android:paddingTop="7dp"
+            android:paddingBottom="3dp"
+            android:textAlignment="textStart"
+            android:textColor="#000000"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/delete_contact"
+            android:layout_width="50dp"
+            android:layout_height="40dp"
+            android:layout_weight="1"
+            android:paddingRight="5dp"
+            android:text="Delete"
+            android:textSize="14sp" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,64 +39,63 @@
         android:orientation="horizontal">
 
         <LinearLayout
-            android:layout_width="135dp"
-            android:layout_height="166dp"
+            android:layout_width="224dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="4dp">
+            android:paddingLeft="5dp">
 
             <TextView
                 android:id="@+id/contact_phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/contact_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/contact_location"
                 android:layout_width="match_parent"
-                android:layout_height="51dp"
+                android:layout_height="44dp"
+                android:padding="5dp"
                 android:textSize="18sp" />
         </LinearLayout>
 
         <LinearLayout
-            android:layout_width="142dp"
-            android:layout_height="162dp"
+            android:layout_width="124dp"
+            android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:layout_marginLeft="4dp">
+            android:paddingLeft="10dp">
 
             <TextView
                 android:id="@+id/contact_pathogen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAlignment="textEnd"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/contact_lastUpdated"
-                android:layout_width="215dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:textAlignment="textEnd"
                 android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/contact_testResult"
-                android:layout_width="215dp"
-                android:layout_height="49dp"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:padding="5dp"
+                android:textAlignment="textEnd"
                 android:textSize="18sp" />
         </LinearLayout>
-
-        <Button
-            android:id="@+id/delete_contact"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:background="@drawable/button"
-            android:textColor="@color/white"
-            android:text="Delete"
-            android:layout_marginRight="5dp"/>
 
     </LinearLayout>
 
