@@ -92,9 +92,11 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                         {
                             String reportedStatus=reportSpin.getSelectedItem().toString();
                             boolean newStatus= StringToBool(reportedStatus);
+                            TextView result = (TextView) findViewById(R.id.txt_result);
+                            result.setText(reportedStatus);
                             UserProfile.GetActivePofile().profileOwner.isHealthy =newStatus;
                             try {
-                                RequestController.ReportHealthStatus(UserProfile.GetActivePofile().profileOwner,homeActivity.this::OnPersonUpdated);
+                                RequestController.ReportHealthStatus(UserProfile.GetActivePofile().profileOwner,homeActivity.this::OnHealthStausUpdated);
                             }
                             catch (JSONException ex){}
                             Toast.makeText(homeActivity.this,
@@ -241,8 +243,11 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             UserProfile.RefreshContacts(null);
             Log.v("API",  "contact add success");
         }
-        else
-            Log.v("API",  status.errorMessage);
+        else {
+            Toast.makeText(homeActivity.this,
+                    "User not found", Toast.LENGTH_SHORT).show();
+            Log.v("API", status.errorMessage);
+        }
     }
     boolean StringToBool(String reportedStatus)
     {
@@ -251,11 +256,10 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
             return true;
         else return false;
     }
-    void OnPersonUpdated(ResponseStatus status)
+    void OnHealthStausUpdated(ResponseStatus status)
     {
         if(status.isValid)
         {
-
             Log.v("API", "Update worked");
         }
         else
