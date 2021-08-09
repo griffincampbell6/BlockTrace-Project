@@ -65,24 +65,22 @@
         android:text="Welcome to BlockTrace..."
         android:textColor="#FFFFFF"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/separator_top"
-        app:layout_constraintVertical_bias="0.014" />
+        app:layout_constraintTop_toBottomOf="@+id/separator_top" />
 
     <ImageView
         android:id="@+id/separator_bottom"
         android:layout_width="380dp"
         android:layout_height="2dp"
         android:background="@drawable/line_white"
-        app:layout_constraintBottom_toTopOf="@+id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.483"
+        app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separator_top"
-        app:layout_constraintVertical_bias="0.298" />
+        app:layout_constraintVertical_bias="0.245" />
 
     <Button
         android:id="@+id/btn_info"
@@ -103,14 +101,12 @@
         android:id="@+id/cardView"
         android:layout_width="360dp"
         android:layout_height="360dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
         app:cardCornerRadius="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/toolbar"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separator_bottom"
-        app:layout_constraintVertical_bias="0.474"
+        app:layout_constraintVertical_bias="0.19"
         tools:ignore="MissingConstraints">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -299,186 +295,57 @@
                 android:background="@drawable/line_black"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.466"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.56" />
+                app:layout_constraintVertical_bias="0.818" />
 
-            <TextView
-                android:id="@+id/lbl_key"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <Button
+                android:id="@+id/btn_createContact"
+                android:layout_width="100dp"
+                android:layout_height="28dp"
+                android:background="@drawable/button"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Public Key:"
-                android:textColor="#000000"
-                app:layout_constraintBottom_toTopOf="@+id/lbl_created"
-                app:layout_constraintStart_toStartOf="@+id/card_separator_top2"
-                app:layout_constraintTop_toBottomOf="@+id/card_separator_top2" />
-
-            <TextView
-                android:id="@+id/lbl_created"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:text="Smart Contracts Created:"
-                android:textColor="#000000"
-                app:layout_constraintBottom_toTopOf="@+id/lbl_active"
-                app:layout_constraintStart_toStartOf="@+id/card_separator_top2"
-                app:layout_constraintTop_toBottomOf="@+id/card_separator_top2"
-                app:layout_constraintVertical_bias="0.529" />
-
-            <TextView
-                android:id="@+id/lbl_joined"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:text="Smart Contracts Joined:"
-                android:textColor="#000000"
-                app:layout_constraintBottom_toTopOf="@+id/lbl_active"
-                app:layout_constraintStart_toStartOf="@+id/card_separator_top2"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_created" />
-
-            <TextView
-                android:id="@+id/lbl_active"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
-                android:text="Active Smart Contracts:"
-                android:textColor="#000000"
+                android:text="Alert a Contact"
+                android:textColor="#FDFDFD"
+                android:textSize="10sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/card_separator_top2"
-                app:layout_constraintTop_toBottomOf="@+id/card_separator_top2"
-                app:layout_constraintVertical_bias="0.619" />
-
-            <ImageView
-                android:id="@+id/imageView6"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:background="@drawable/copy_icon"
-                app:layout_constraintBottom_toBottomOf="@+id/lbl_key"
                 app:layout_constraintEnd_toEndOf="@+id/card_separator_top2"
-                app:layout_constraintTop_toTopOf="@+id/lbl_key" />
-
-            <TextView
-                android:id="@+id/txt_key"
-                android:layout_width="110dp"
-                android:layout_height="18dp"
-                android:ellipsize="end"
-                android:maxLines="1"
-                android:text="NULL"
-                android:textAlignment="viewStart"
-                app:layout_constraintBottom_toBottomOf="@+id/lbl_key"
-                app:layout_constraintEnd_toStartOf="@+id/imageView6"
-                app:layout_constraintHorizontal_bias="0.968"
-                app:layout_constraintStart_toEndOf="@+id/lbl_key"
-                app:layout_constraintTop_toTopOf="@+id/lbl_key"
-                app:layout_constraintVertical_bias="1.0" />
-
-            <TextView
-                android:id="@+id/txt_created"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="NULL"
-                app:layout_constraintBottom_toBottomOf="@+id/lbl_created"
-                app:layout_constraintStart_toStartOf="@+id/txt_key"
-                app:layout_constraintTop_toTopOf="@+id/lbl_created" />
-
-            <TextView
-                android:id="@+id/txt_joined"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="NULL"
-                app:layout_constraintBottom_toBottomOf="@+id/lbl_joined"
-                app:layout_constraintStart_toStartOf="@+id/txt_key"
-                app:layout_constraintTop_toTopOf="@+id/lbl_joined"
-                app:layout_constraintVertical_bias="1.0" />
-
-            <TextView
-                android:id="@+id/txt_actives"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="NULL"
-                app:layout_constraintBottom_toBottomOf="@+id/lbl_active"
-                app:layout_constraintStart_toStartOf="@+id/txt_key"
-                app:layout_constraintTop_toTopOf="@+id/lbl_active"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintHorizontal_bias="0.217"
+                app:layout_constraintStart_toStartOf="@+id/card_separator_top2"
+                app:layout_constraintTop_toBottomOf="@+id/card_separator_top2"
+                app:layout_constraintVertical_bias="0.567" />
 
             <Button
-                android:id="@+id/btn_createContract"
+                android:id="@+id/btnReport"
                 android:layout_width="100dp"
                 android:layout_height="28dp"
                 android:background="@drawable/button"
                 android:fontFamily="@font/roboto_medium"
-                android:text="Create Contract"
+                android:text="Report Status"
                 android:textColor="#FDFDFD"
                 android:textSize="10sp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/lbl_active"
-                app:layout_constraintHorizontal_bias="0.734"
-                app:layout_constraintStart_toStartOf="@+id/lbl_active"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_active"
-                app:layout_constraintVertical_bias="0.483" />
-
-            <Button
-                android:id="@+id/btn_joinContract"
-                android:layout_width="100dp"
-                android:layout_height="28dp"
-                android:background="@drawable/button"
-                android:fontFamily="@font/roboto_medium"
-                android:text="Join Contract"
-                android:textColor="#FDFDFD"
-                android:textSize="10sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.513"
-                app:layout_constraintStart_toEndOf="@+id/btn_createContract"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_active"
-                app:layout_constraintVertical_bias="0.481" />
+                app:layout_constraintEnd_toEndOf="@+id/card_separator_top2"
+                app:layout_constraintStart_toEndOf="@+id/btn_createContact"
+                app:layout_constraintTop_toBottomOf="@+id/card_separator_top2"
+                app:layout_constraintVertical_bias="0.567" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="410dp"
-        android:layout_height="59dp"
-        android:background="@color/white"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/btn_analytics"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:background="@drawable/analytics_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_home"
-        app:layout_constraintEnd_toStartOf="@+id/btn_home"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="@+id/btn_home" />
-
-    <Button
-        android:id="@+id/btn_home"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:background="@drawable/home_icon"
-        android:backgroundTint="#000000"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar" />
-
     <Button
         android:id="@+id/btn_contacts"
-        android:layout_width="54dp"
-        android:layout_height="48dp"
-        android:background="@drawable/contacts_icon"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_home"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintStart_toEndOf="@+id/btn_home"
-        app:layout_constraintTop_toTopOf="@+id/btn_home" />
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:background="@drawable/button"
+        android:text="View Contacts"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cardView"
+        app:layout_constraintTop_toBottomOf="@+id/cardView"
+        app:layout_constraintVertical_bias="0.293" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

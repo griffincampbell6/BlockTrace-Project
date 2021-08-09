@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">BlockTraceUI</string>
-
+    <string-array name="results">
+        <item>Please select a test result...</item>
+        <item>Negative</item>
+        <item>Positive</item>
+    </string-array>
     <string-array name="genders">
         <item>Male</item>
         <item>Female</item>
