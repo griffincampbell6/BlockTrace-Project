@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.json.JSONException;
 
@@ -70,6 +71,8 @@ public class LoginActivity extends AppCompatActivity {
         else // either password is wrong or user name does not exist the data base will tell you in the message
         {
             Log.v("API",status.errorMessage);
+            Toast.makeText(LoginActivity.this,
+                    "Username or password is incorrect", Toast.LENGTH_SHORT).show();
         }
     }
 }

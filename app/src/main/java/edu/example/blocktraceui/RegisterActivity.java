@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import org.json.JSONException;
 
@@ -88,6 +89,8 @@ public class RegisterActivity extends AppCompatActivity {
         else // user name already exist
         {
             Log.v("API",status.errorMessage);
+            Toast.makeText(RegisterActivity.this,
+                    "Error - Username is already taken", Toast.LENGTH_SHORT).show();
         }
     }
     private void switchToLoginActivity() {
