@@ -49,6 +49,7 @@
         android:id="@+id/txt_intro"
         android:layout_width="368dp"
         android:layout_height="66dp"
+        android:paddingLeft="10dp"
         android:text="A decentralized platform for contact tracing friends, family, and coworkers to alert them of possible exposure to infectious disease."
         android:textColor="#FFFFFF"
         android:textSize="18sp"
@@ -266,7 +267,7 @@
 
             <Button
                 android:id="@+id/btn_createContact"
-                android:layout_width="100dp"
+                android:layout_width="115dp"
                 android:layout_height="36dp"
                 android:background="@drawable/button"
                 android:fontFamily="@font/roboto_medium"
@@ -275,14 +276,14 @@
                 android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/card_separator_top2"
-                app:layout_constraintHorizontal_bias="0.217"
+                app:layout_constraintHorizontal_bias="0.172"
                 app:layout_constraintStart_toStartOf="@+id/card_separator_top2"
                 app:layout_constraintTop_toBottomOf="@+id/card_separator_top2"
-                app:layout_constraintVertical_bias="0.567" />
+                app:layout_constraintVertical_bias="0.484" />
 
             <Button
                 android:id="@+id/btnReport"
-                android:layout_width="100dp"
+                android:layout_width="115dp"
                 android:layout_height="36dp"
                 android:background="@drawable/button"
                 android:fontFamily="@font/roboto_medium"
@@ -292,8 +293,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/card_separator_top2"
                 app:layout_constraintStart_toEndOf="@+id/btn_createContact"
-                app:layout_constraintTop_toBottomOf="@+id/card_separator_top2"
-                app:layout_constraintVertical_bias="0.567" />
+                app:layout_constraintTop_toBottomOf="@+id/card_separator_top2" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -301,8 +301,8 @@
 
     <Button
         android:id="@+id/btn_contacts"
-        android:layout_width="120dp"
-        android:layout_height="40dp"
+        android:layout_width="130dp"
+        android:layout_height="36dp"
         android:background="@drawable/button"
         android:text="View Contacts"
         android:textColor="#FFFFFF"
