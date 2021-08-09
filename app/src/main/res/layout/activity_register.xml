@@ -10,7 +10,33 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#407EB8"
-        tools:context=".MainActivity">
+        tools:context=".MainActivity"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-174dp">
+
+        <TextView
+            android:id="@+id/lbl_location3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Location:"
+            android:textColor="#FFFFFF"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextTextPostalAddress3"
+            app:layout_constraintEnd_toEndOf="@+id/labelfName"
+            app:layout_constraintTop_toTopOf="@+id/editTextTextPostalAddress3" />
+
+        <EditText
+            android:id="@+id/editTextTextPostalAddress3"
+            android:layout_width="210dp"
+            android:layout_height="36dp"
+            android:background="#FFFFFF"
+            android:ems="10"
+            android:hint="Enter city, ST"
+            android:inputType="textPostalAddress"
+            app:layout_constraintBottom_toTopOf="@+id/editTextPasswordReg"
+            app:layout_constraintEnd_toEndOf="@+id/editTextfName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextEmailReg" />
 
         <TextView
             android:id="@+id/lbl_ageReg"
@@ -56,7 +82,7 @@
             android:ems="10"
             android:hint="Enter number..."
             android:inputType="phone"
-            app:layout_constraintBottom_toTopOf="@+id/editTextUsernameReg"
+            app:layout_constraintBottom_toTopOf="@+id/editTextTextPostalAddress3"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
             app:layout_constraintTop_toBottomOf="@+id/editTextEmailReg" />
 
@@ -70,7 +96,7 @@
             android:inputType="textEmailAddress"
             app:layout_constraintBottom_toTopOf="@+id/btn_register"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
-            app:layout_constraintTop_toBottomOf="@+id/editTextfName" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_start" />
 
         <TextView
             android:id="@+id/lbl_emailReg"
@@ -160,7 +186,8 @@
             android:inputType="textPassword"
             app:layout_constraintBottom_toTopOf="@+id/btn_register"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
-            app:layout_constraintTop_toBottomOf="@+id/editTextUsernameReg" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextEmailReg"
+            app:layout_constraintVertical_bias="0.907" />
 
         <EditText
             android:id="@+id/editTextUsernameReg"
@@ -170,16 +197,16 @@
             android:ems="10"
             android:hint="Enter username..."
             android:inputType="textPersonName"
-            app:layout_constraintBottom_toTopOf="@+id/btn_register"
+            app:layout_constraintBottom_toTopOf="@+id/editTextPasswordReg"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
-            app:layout_constraintTop_toBottomOf="@+id/editTextEmailReg" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextTextPostalAddress3" />
 
         <EditText
             android:id="@+id/editTextfName"
             android:layout_width="210dp"
             android:layout_height="36dp"
-            android:layout_marginTop="40dp"
-            android:layout_marginEnd="48dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="52dp"
             android:background="#FFFFFF"
             android:ems="10"
             android:hint="Enter first name..."
@@ -212,10 +239,10 @@
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.185"
+            app:layout_constraintHorizontal_bias="0.163"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_start"
-            app:layout_constraintVertical_bias="0.944" />
+            app:layout_constraintVertical_bias="0.941" />
 
         <EditText
             android:id="@+id/editTextlName"
