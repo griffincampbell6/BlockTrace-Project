@@ -9,6 +9,7 @@
         android:id="@+id/spn_Report"
         android:layout_width="409dp"
         android:layout_height="wrap_content"
+        android:background="#E1E0E0"
         tools:layout_editor_absoluteX="1dp"
         tools:layout_editor_absoluteY="71dp" />
 </LinearLayout>

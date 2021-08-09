@@ -52,23 +52,27 @@
         android:text="A decentralized platform for contact tracing friends, family, and coworkers to alert them of possible exposure to infectious disease."
         android:textColor="#FFFFFF"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/btn_info"
+        app:layout_constraintBottom_toTopOf="@+id/separator_bottom"
         app:layout_constraintEnd_toEndOf="@+id/separator_top"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/separator_top"
-        app:layout_constraintTop_toBottomOf="@+id/txt_welcome" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_welcome"
+        app:layout_constraintVertical_bias="0.627" />
 
     <TextView
         android:id="@+id/txt_welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingTop="5dp"
         android:text="Welcome to BlockTrace..."
         android:textColor="#FFFFFF"
         android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/separator_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.113"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/separator_top" />
+        app:layout_constraintTop_toBottomOf="@+id/separator_top"
+        app:layout_constraintVertical_bias="0.071" />
 
     <ImageView
         android:id="@+id/separator_bottom"
@@ -80,27 +84,12 @@
         app:layout_constraintHorizontal_bias="0.516"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/separator_top"
-        app:layout_constraintVertical_bias="0.245" />
-
-    <Button
-        android:id="@+id/btn_info"
-        android:layout_width="140dp"
-        android:layout_height="30dp"
-        android:background="@drawable/button"
-        android:text="More Info &amp; FAQ"
-        android:textColor="#FFFFFF"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/separator_bottom"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.059"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txt_welcome"
-        app:layout_constraintVertical_bias="0.852" />
+        app:layout_constraintVertical_bias="0.224" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="360dp"
-        android:layout_height="360dp"
+        android:layout_height="380dp"
         app:cardCornerRadius="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -303,12 +292,12 @@
             <Button
                 android:id="@+id/btn_createContact"
                 android:layout_width="100dp"
-                android:layout_height="28dp"
+                android:layout_height="36dp"
                 android:background="@drawable/button"
                 android:fontFamily="@font/roboto_medium"
                 android:text="Alert a Contact"
                 android:textColor="#FDFDFD"
-                android:textSize="10sp"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/card_separator_top2"
                 app:layout_constraintHorizontal_bias="0.217"
@@ -319,12 +308,12 @@
             <Button
                 android:id="@+id/btnReport"
                 android:layout_width="100dp"
-                android:layout_height="28dp"
+                android:layout_height="36dp"
                 android:background="@drawable/button"
                 android:fontFamily="@font/roboto_medium"
                 android:text="Report Status"
                 android:textColor="#FDFDFD"
-                android:textSize="10sp"
+                android:textSize="12sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/card_separator_top2"
                 app:layout_constraintStart_toEndOf="@+id/btn_createContact"
@@ -345,7 +334,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/cardView"
         app:layout_constraintTop_toBottomOf="@+id/cardView"
-        app:layout_constraintVertical_bias="0.293" />
+        app:layout_constraintVertical_bias="0.44" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
