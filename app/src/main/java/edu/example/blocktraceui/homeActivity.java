@@ -184,7 +184,6 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         TextView gender = (TextView) findViewById(R.id.txt_gender);
         TextView location = (TextView) findViewById(R.id.txt_location);
         TextView phone = (TextView) findViewById(R.id.txt_phone);
-        TextView email = (TextView) findViewById(R.id.txt_email);
 
         name.setText(UserProfile.GetActivePofile().profileOwner.firstName + " " + UserProfile.GetActivePofile().profileOwner.lastName);
         age.setText(String.valueOf(UserProfile.GetActivePofile().profileOwner.age));
