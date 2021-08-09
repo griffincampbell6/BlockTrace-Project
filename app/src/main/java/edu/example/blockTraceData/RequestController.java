@@ -228,4 +228,25 @@ public class RequestController
                 });
         requestQueue.add(jRequest);
     }
+    public static void ReportHealthStatus(Person p, Consumer<ResponseStatus> callback) throws UnsupportedOperationException, JSONException {
+        String personAsJson= gson.toJson(p);
+        String url ="https://bchainhealth.azurewebsites.net/People/ReportHealth/"+ p.id;
+        JsonObjectRequest jRequest = new JsonObjectRequest(Request.Method.PUT, url, new JSONObject(personAsJson),
+                response ->
+                {
+                    callback.accept(new ResponseStatus(true,""));
+                },
+                error -> {
+                    String errorMessage ="";
+                    try {
+                        if(error.networkResponse!=null)
+                            errorMessage = new String(error.networkResponse.data,"UTF-8");
+                        Log.v("API",error.getMessage());
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
+                    callback.accept(new ResponseStatus(false,errorMessage));
+                });
+        requestQueue.add(jRequest);
+    }
 }
