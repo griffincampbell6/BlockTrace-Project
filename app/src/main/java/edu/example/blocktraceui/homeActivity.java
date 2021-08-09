@@ -14,6 +14,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.PopupMenu;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.JsonIOException;
@@ -36,8 +37,10 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
     {
 
         super.onCreate(savedInstanceState);
-        GetUserContacts();
         setContentView(R.layout.home_screen);
+        PopulateFields();
+        GetUserContacts();
+
 
         Button settingIcon = (Button) findViewById(R.id.btn_settings);
         settingIcon.setOnClickListener(new View.OnClickListener() {
@@ -176,6 +179,21 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
 
     public void PopulateFields()
     {
+        TextView name = (TextView) findViewById(R.id.txt_name);
+        TextView age = (TextView) findViewById(R.id.txt_age);
+        TextView gender = (TextView) findViewById(R.id.txt_gender);
+        TextView location = (TextView) findViewById(R.id.txt_location);
+        TextView phone = (TextView) findViewById(R.id.txt_phone);
+        TextView email = (TextView) findViewById(R.id.txt_email);
+
+        name.setText(UserProfile.GetActivePofile().profileOwner.firstName + " " + UserProfile.GetActivePofile().profileOwner.lastName);
+        age.setText(String.valueOf(UserProfile.GetActivePofile().profileOwner.age));
+        gender.setText(UserProfile.GetActivePofile().profileOwner.gender);
+        //location.setText(UserProfile.GetActivePofile().profileOwner.location);
+        phone.setText(UserProfile.GetActivePofile().profileOwner.phone);
+        //email.setText(UserProfile.GetActivePofile().profileOwner.email);
+
+
      //nametTextview.text=   UserProfile.GetActivePofile().profileOwner.firstName;
     }
     public void GetUserContacts()

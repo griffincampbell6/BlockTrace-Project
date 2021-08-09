@@ -49,10 +49,9 @@ public class LoginActivity extends AppCompatActivity {
         // second element -> password
         EditText input_userName = (EditText) findViewById(R.id.editTextUsername);
         EditText input_userPassword = (EditText) findViewById(R.id.editTextPassword);
-
         String[] loginData = new String[2];
-        loginData[0]= input_userName.toString();
-        loginData[1]= input_userPassword.toString();
+        loginData[0]= input_userName.getText().toString();
+        loginData[1]= input_userPassword.getText().toString();
         // api call;
         try {
             RequestController.Login(loginData,this::OnLoginResponse);

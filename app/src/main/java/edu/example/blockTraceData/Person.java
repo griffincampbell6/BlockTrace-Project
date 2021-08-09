@@ -12,6 +12,7 @@ public class Person
     public boolean isHealthy=true;
     public String userName ;
     public String password;
+    public String dateReported;
     public Person()
     {
 
