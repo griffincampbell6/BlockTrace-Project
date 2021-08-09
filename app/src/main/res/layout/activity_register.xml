@@ -30,13 +30,16 @@
             android:id="@+id/editTextTextPostalAddress3"
             android:layout_width="210dp"
             android:layout_height="36dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/button"
+            android:backgroundTint="#FFFFFF"
             android:ems="10"
             android:hint="Enter city, ST"
             android:inputType="textPostalAddress"
+            android:paddingStart="8dp"
             app:layout_constraintBottom_toTopOf="@+id/editTextUsernameReg"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
-            app:layout_constraintTop_toBottomOf="@+id/editTextPhoneReg" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextPhoneReg"
+            app:layout_constraintVertical_bias="0.223" />
 
         <TextView
             android:id="@+id/lbl_ageReg"
@@ -78,35 +81,44 @@
             android:id="@+id/editTextPhoneReg"
             android:layout_width="210dp"
             android:layout_height="36dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/button"
+            android:backgroundTint="#FFFFFF"
             android:ems="10"
             android:hint="Enter number..."
             android:inputType="phone"
+            android:paddingStart="8dp"
             app:layout_constraintBottom_toTopOf="@+id/btn_goBackToLogin"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
-            app:layout_constraintTop_toBottomOf="@+id/editTextfName" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextfName"
+            app:layout_constraintVertical_bias="0.426" />
 
         <EditText
             android:id="@+id/editTextAgeReg"
             android:layout_width="210dp"
             android:layout_height="36dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/button"
+            android:backgroundTint="#FFFFFF"
             android:ems="10"
             android:hint="Enter age..."
             android:inputType="number"
+            android:paddingStart="8dp"
             app:layout_constraintBottom_toTopOf="@+id/editTextPhoneReg"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
-            app:layout_constraintTop_toBottomOf="@+id/editTextfName" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextfName"
+            app:layout_constraintVertical_bias="0.596" />
 
         <Spinner
             android:id="@+id/spn_genderReg"
             android:layout_width="210dp"
             android:layout_height="36dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/button"
+            android:backgroundTint="#FFFFFF"
+            android:paddingStart="8dp"
             android:textAlignment="textStart"
             app:layout_constraintBottom_toTopOf="@+id/editTextPhoneReg"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
-            app:layout_constraintTop_toBottomOf="@+id/editTextAgeReg" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextAgeReg"
+            app:layout_constraintVertical_bias="0.484" />
 
         <TextView
             android:id="@+id/labelPasswordReg"
@@ -156,22 +168,27 @@
             android:id="@+id/editTextPasswordReg"
             android:layout_width="210dp"
             android:layout_height="36dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/button"
+            android:backgroundTint="#FFFFFF"
             android:ems="10"
             android:hint="Enter password..."
             android:inputType="textPassword"
+            android:paddingStart="8dp"
             app:layout_constraintBottom_toTopOf="@+id/btn_register"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
-            app:layout_constraintTop_toBottomOf="@+id/editTextUsernameReg" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextUsernameReg"
+            app:layout_constraintVertical_bias="0.188" />
 
         <EditText
             android:id="@+id/editTextUsernameReg"
             android:layout_width="210dp"
             android:layout_height="36dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/button"
+            android:backgroundTint="#FFFFFF"
             android:ems="10"
             android:hint="Enter username..."
             android:inputType="textPersonName"
+            android:paddingStart="8dp"
             app:layout_constraintBottom_toTopOf="@+id/btn_goBackToLogin"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
             app:layout_constraintTop_toBottomOf="@+id/editTextPhoneReg" />
@@ -181,15 +198,17 @@
             android:layout_width="210dp"
             android:layout_height="36dp"
             android:layout_marginTop="24dp"
-            android:layout_marginEnd="52dp"
-            android:background="#FFFFFF"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/button"
+            android:backgroundTint="#FAF8F8"
             android:ems="10"
             android:hint="Enter first name..."
             android:inputType="textPersonName"
+            android:paddingStart="8dp"
             app:layout_constraintBottom_toTopOf="@+id/btn_register"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_start"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintVertical_bias="0.017" />
 
         <Button
             android:id="@+id/btn_register"
@@ -200,10 +219,10 @@
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="@+id/btn_goBackToLogin"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.373"
+            app:layout_constraintHorizontal_bias="0.359"
             app:layout_constraintStart_toEndOf="@+id/btn_goBackToLogin"
             app:layout_constraintTop_toTopOf="@+id/btn_goBackToLogin"
-            app:layout_constraintVertical_bias="0.944" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <Button
             android:id="@+id/btn_goBackToLogin"
@@ -214,7 +233,7 @@
             android:textColor="#FFFFFF"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.163"
+            app:layout_constraintHorizontal_bias="0.22"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txt_start"
             app:layout_constraintVertical_bias="0.941" />
@@ -223,13 +242,16 @@
             android:id="@+id/editTextlName"
             android:layout_width="210dp"
             android:layout_height="36dp"
-            android:background="#FFFFFF"
+            android:background="@drawable/button"
+            android:backgroundTint="#FFFFFF"
             android:ems="10"
             android:hint="Enter last name..."
             android:inputType="textPersonName"
+            android:paddingStart="8dp"
             app:layout_constraintBottom_toTopOf="@+id/editTextAgeReg"
             app:layout_constraintEnd_toEndOf="@+id/editTextfName"
-            app:layout_constraintTop_toBottomOf="@+id/editTextfName" />
+            app:layout_constraintTop_toBottomOf="@+id/editTextfName"
+            app:layout_constraintVertical_bias="0.323" />
 
         <TextView
             android:id="@+id/txt_start"
