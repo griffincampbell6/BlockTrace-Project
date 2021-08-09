@@ -105,8 +105,9 @@
 
             <TextView
                 android:id="@+id/txt_name"
-                android:layout_width="wrap_content"
+                android:layout_width="280dp"
                 android:layout_height="wrap_content"
+                android:lines="1"
                 android:text="NULL"
                 android:textColor="#000000"
                 android:textSize="22sp"
@@ -147,10 +148,22 @@
                 android:text="Age:"
                 android:textColor="#000000"
                 android:textSize="18sp"
+                app:layout_constraintBottom_toTopOf="@+id/lbl_gender"
+                app:layout_constraintStart_toStartOf="@+id/card_separator_top"
+                app:layout_constraintTop_toBottomOf="@+id/lbl_username" />
+
+            <TextView
+                android:id="@+id/lbl_username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Username:"
+                android:textColor="#000000"
+                android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/card_separator_top2"
                 app:layout_constraintStart_toStartOf="@+id/card_separator_top"
                 app:layout_constraintTop_toBottomOf="@+id/card_separator_top"
-                app:layout_constraintVertical_bias="0.116" />
+                app:layout_constraintVertical_bias="0.06" />
 
             <TextView
                 android:id="@+id/lbl_gender"
@@ -160,9 +173,9 @@
                 android:text="Gender:"
                 android:textColor="#000000"
                 android:textSize="18sp"
-                app:layout_constraintBottom_toTopOf="@+id/lbl_location"
+                app:layout_constraintBottom_toTopOf="@+id/lbl_phone"
                 app:layout_constraintStart_toStartOf="@+id/card_separator_top"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_age" />
+                app:layout_constraintTop_toBottomOf="@+id/lbl_username" />
 
             <TextView
                 android:id="@+id/lbl_location"
@@ -174,8 +187,7 @@
                 android:textSize="18sp"
                 app:layout_constraintBottom_toTopOf="@+id/lbl_phone"
                 app:layout_constraintStart_toStartOf="@+id/card_separator_top"
-                app:layout_constraintTop_toBottomOf="@+id/lbl_age"
-                app:layout_constraintVertical_bias="0.728" />
+                app:layout_constraintTop_toBottomOf="@+id/lbl_gender" />
 
             <TextView
                 android:id="@+id/lbl_phone"
@@ -228,6 +240,19 @@
                 app:layout_constraintHorizontal_bias="0.744"
                 app:layout_constraintStart_toEndOf="@+id/lbl_age"
                 app:layout_constraintTop_toTopOf="@+id/lbl_location" />
+
+            <TextView
+                android:id="@+id/txt_username"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="NULL"
+                android:textAlignment="viewEnd"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/lbl_username"
+                app:layout_constraintEnd_toStartOf="@+id/imageView5"
+                app:layout_constraintHorizontal_bias="0.744"
+                app:layout_constraintStart_toEndOf="@+id/lbl_age"
+                app:layout_constraintTop_toTopOf="@+id/lbl_username" />
 
             <TextView
                 android:id="@+id/txt_phone"
