@@ -193,6 +193,7 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         TextView gender = (TextView) findViewById(R.id.txt_gender);
         TextView location = (TextView) findViewById(R.id.txt_location);
         TextView phone = (TextView) findViewById(R.id.txt_phone);
+        TextView result = (TextView) findViewById(R.id.txt_result);
 
         user.setText(UserProfile.GetActivePofile().profileOwner.userName);
         name.setText(UserProfile.GetActivePofile().profileOwner.firstName + " " + UserProfile.GetActivePofile().profileOwner.lastName);
@@ -200,6 +201,14 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         gender.setText(UserProfile.GetActivePofile().profileOwner.gender);
         location.setText(UserProfile.GetActivePofile().profileOwner.location);
         phone.setText(UserProfile.GetActivePofile().profileOwner.phone);
+        result.setText(boolToString(UserProfile.GetActivePofile().profileOwner.isHealthy));
+
+    }
+    String boolToString(boolean isHealth)
+    {
+        if(isHealth)
+            return "NEGATIVE";
+        else return "POSITIVE";
     }
     public void GetUserContacts()
     {
