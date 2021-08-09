@@ -16,6 +16,8 @@ import android.widget.PopupMenu;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.gson.JsonIOException;
+
 import org.json.JSONException;
 
 import edu.example.blockTraceData.Person;
@@ -83,10 +85,19 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 dialogBuilderReport.setPositiveButton("Confirm", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        if(!reportSpin.getSelectedItem().toString().equalsIgnoreCase("Please select a test result...")){
+                        if(!reportSpin.getSelectedItem().toString().equalsIgnoreCase("Please select a test result..."))
+                        {
+                            String reportedStatus=reportSpin.getSelectedItem().toString();
+                            boolean newStatus= StringToBool(reportedStatus);
+                            UserProfile.GetActivePofile().profileOwner.isHealthy =newStatus;
+                            try {
+                                RequestController.UpdatePerson(UserProfile.GetActivePofile().profileOwner,homeActivity.this::OnPersonUpdated);
+                            }
+                            catch (JSONException ex){}
                             Toast.makeText(homeActivity.this,
-                                    reportSpin.getSelectedItem().toString() + "Result Reported", Toast.LENGTH_SHORT).show();
+                                     reportedStatus + " Result Reported", Toast.LENGTH_SHORT).show();
                             //GET TEST RESULTS
+
                             dialogInterface.dismiss();
                         }
                     }
@@ -188,5 +199,23 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         }
         else
             Log.v("API",  status.errorMessage);
+    }
+    boolean StringToBool(String reportedStatus)
+    {
+        String[] statusOptions=getResources().getStringArray(R.array.results);
+        if(statusOptions[1].equals(reportedStatus))
+            return false;
+        else return true;
+    }
+    void OnPersonUpdated(ResponseStatus status)
+    {
+        if(status.isValid)
+        {
+            Log.v("API", "Update worked");
+        }
+        else
+        {
+            Log.v("API",status.errorMessage);
+        }
     }
 }
