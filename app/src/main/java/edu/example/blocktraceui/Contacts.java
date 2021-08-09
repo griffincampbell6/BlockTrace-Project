@@ -48,12 +48,7 @@ public class Contacts extends AppCompatActivity {
         });
 
         Button refreshButton = (Button) findViewById(R.id.refresh_button);
-        refreshButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                UserProfile.RefreshContacts(null);
-            }
-        });
+        refreshButton.setOnClickListener( v-> UserProfile.RefreshContacts(this::OnContactsRefreshed));
         SetContactsToAdapter();
     }
     void SetContactsToAdapter()
@@ -63,6 +58,15 @@ public class Contacts extends AppCompatActivity {
         for(int i=0; i<len; ++i)
         {
             contactList.add(UserProfile.GetActivePofile().userContacts[i]);
+        }
+    }
+    void OnContactsRefreshed(ResponseStatus status,Person[] contacts)
+    {
+        if(status.isValid)
+        {
+            currentAdapter.clear();
+            currentAdapter.addAll(contacts);
+            currentAdapter.notifyDataSetChanged();
         }
     }
 

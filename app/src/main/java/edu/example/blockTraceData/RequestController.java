@@ -151,6 +151,32 @@ public class RequestController
                 });
         requestQueue.add(jRequest);
     }
+    public static void AddByUserName(int CurrentUserId, String userName , Consumer<ResponseStatus> callback) throws JSONException,UnsupportedOperationException
+    {
+        String jsonName=gson.toJson(new String[]{userName});
+        Log.v("API",jsonName);
+        String url ="https://bchainhealth.azurewebsites.net/People/AddByUserName/"+ String.valueOf(CurrentUserId);
+        JsonArrayRequest jRequest = new JsonArrayRequest(Request.Method.POST, url, new JSONArray(jsonName),
+                response -> {
+                    callback.accept(new ResponseStatus(true,""));
+                },
+                error -> {
+                    String errorMessage ="";
+                    try {
+                        if(error.networkResponse!=null)
+                            errorMessage = new String(error.networkResponse.data,"UTF-8");
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
+                    Log.v("API",error.getMessage());
+                    callback.accept(new ResponseStatus(false,errorMessage));
+                });
+        requestQueue.add(jRequest);
+    }
+    public static void AddByUserName(Person person, String userName , Consumer<ResponseStatus> callback) throws JSONException,UnsupportedOperationException
+    {
+       AddByUserName(person.id,userName,callback);
+    }
     // the local users ID, int[] the id of the user he you wish to add
     public static void RemoveContacts(int CurrentUserId, int[] IdsToAdd , Consumer<ResponseStatus> callback) throws JSONException,UnsupportedOperationException
     {

@@ -94,7 +94,7 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                             boolean newStatus= StringToBool(reportedStatus);
                             UserProfile.GetActivePofile().profileOwner.isHealthy =newStatus;
                             try {
-                                RequestController.UpdatePerson(UserProfile.GetActivePofile().profileOwner,homeActivity.this::OnPersonUpdated);
+                                RequestController.ReportHealthStatus(UserProfile.GetActivePofile().profileOwner,homeActivity.this::OnPersonUpdated);
                             }
                             catch (JSONException ex){}
                             Toast.makeText(homeActivity.this,
@@ -168,11 +168,19 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 dialog.dismiss();
             }
         });
-
+        EditText txt = (EditText) createContact.findViewById(R.id.contactName);
         btn_createSave.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-
+            public void onClick(View v)
+            {
+                String userinputName =txt.getText().toString();
+                if(userinputName!=null&&!userinputName.equals("")) {
+                    try {
+                        RequestController.AddByUserName(UserProfile.GetActivePofile().profileOwner, userinputName, homeActivity.this::OnContactAdded);
+                    } catch (JSONException ex) {
+                    }
+                }
+                dialog.dismiss();
             }
         });
     }
@@ -217,17 +225,30 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         else
             Log.v("API",  status.errorMessage);
     }
+    void OnContactAdded(ResponseStatus status)
+    {
+        if(status.isValid)
+        {
+            Toast.makeText(homeActivity.this,
+                    "Contact Added", Toast.LENGTH_SHORT).show();
+            UserProfile.RefreshContacts(null);
+            Log.v("API",  "contact add success");
+        }
+        else
+            Log.v("API",  status.errorMessage);
+    }
     boolean StringToBool(String reportedStatus)
     {
         String[] statusOptions=getResources().getStringArray(R.array.results);
         if(statusOptions[1].equals(reportedStatus))
-            return false;
-        else return true;
+            return true;
+        else return false;
     }
     void OnPersonUpdated(ResponseStatus status)
     {
         if(status.isValid)
         {
+
             Log.v("API", "Update worked");
         }
         else

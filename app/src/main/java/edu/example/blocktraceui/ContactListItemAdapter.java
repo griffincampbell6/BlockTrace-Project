@@ -72,8 +72,8 @@ public class ContactListItemAdapter extends ArrayAdapter<Person> {
     String boolToString(boolean isHealth)
     {
         if(isHealth)
-            return "POSITIVE";
-        else return "NEGATIVE";
+            return "NEGATIVE";
+        else return "POSITIVE";
     }
     void OnDeletePressed(int personId)
     {
@@ -83,6 +83,7 @@ public class ContactListItemAdapter extends ArrayAdapter<Person> {
             {
                     if(s.isValid)
                     {
+                        //UserProfile.RefreshContacts(this::OnContactsRefreshed);
                         UserProfile.RefreshContacts(this::OnContactsRefreshed);
                     }
             });
