@@ -22,12 +22,12 @@
             android:text="Location:"
             android:textColor="#FFFFFF"
             android:textSize="18sp"
-            app:layout_constraintBottom_toBottomOf="@+id/editTextTextPostalAddress3"
+            app:layout_constraintBottom_toBottomOf="@+id/editTextAddress"
             app:layout_constraintEnd_toEndOf="@+id/labelfName"
-            app:layout_constraintTop_toTopOf="@+id/editTextTextPostalAddress3" />
+            app:layout_constraintTop_toTopOf="@+id/editTextAddress" />
 
         <EditText
-            android:id="@+id/editTextTextPostalAddress3"
+            android:id="@+id/editTextAddress"
             android:layout_width="210dp"
             android:layout_height="36dp"
             android:background="#FFFFFF"
