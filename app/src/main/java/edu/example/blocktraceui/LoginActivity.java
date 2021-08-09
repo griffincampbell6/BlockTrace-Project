@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import org.json.JSONException;
 
@@ -45,9 +46,12 @@ public class LoginActivity extends AppCompatActivity {
     {
         // first element -> username;
         // second element -> password
+        EditText input_userName = (EditText) findViewById(R.id.editTextUsername);
+        EditText input_userPassword = (EditText) findViewById(R.id.editTextPassword);
+
         String[] loginData = new String[2];
-        loginData[0]="m@b.com";
-        loginData[1]="password";
+        loginData[0]= input_userName.toString();
+        loginData[1]= input_userPassword.toString();
         // api call;
         try {
             RequestController.Login(loginData,this::OnLoginResponse);
