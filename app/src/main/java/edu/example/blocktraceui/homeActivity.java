@@ -198,10 +198,6 @@ public class homeActivity extends AppCompatActivity implements PopupMenu.OnMenuI
         gender.setText(UserProfile.GetActivePofile().profileOwner.gender);
         location.setText(UserProfile.GetActivePofile().profileOwner.location);
         phone.setText(UserProfile.GetActivePofile().profileOwner.phone);
-        //email.setText(UserProfile.GetActivePofile().profileOwner.email);
-
-
-     //nametTextview.text=   UserProfile.GetActivePofile().profileOwner.firstName;
     }
     public void GetUserContacts()
     {

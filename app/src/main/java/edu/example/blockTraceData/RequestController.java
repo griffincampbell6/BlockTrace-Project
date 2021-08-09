@@ -168,7 +168,7 @@ public class RequestController
                     } catch (UnsupportedEncodingException e) {
                         e.printStackTrace();
                     }
-                    Log.v("API",error.getMessage());
+                   // Log.v("API",error.getMessage());
                     callback.accept(new ResponseStatus(false,errorMessage));
                 });
         requestQueue.add(jRequest);
